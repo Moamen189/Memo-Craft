@@ -11,7 +11,8 @@ import { NotfpundComponent } from './Components/notfpund/notfpund.component';
 import { AuthLayoutComponent } from './Layouts/auth-layout/auth-layout.component';
 import { BlankLayoutComponent } from './Layouts/blank-layout/blank-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
