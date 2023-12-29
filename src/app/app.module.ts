@@ -11,6 +11,7 @@ import { NoteDataComponent } from './Components/note-data/note-data.component';
 import { NotfpundComponent } from './Components/notfpund/notfpund.component';
 import { AuthLayoutComponent } from './Layouts/auth-layout/auth-layout.component';
 import { BlankLayoutComponent } from './Layouts/blank-layout/blank-layout.component';
+import { FilterPipe } from './Core/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BlankLayoutComponent } from './Layouts/blank-layout/blank-layout.compon
     NoteDataComponent,
     NotfpundComponent,
     AuthLayoutComponent,
-    BlankLayoutComponent
+    BlankLayoutComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
