@@ -9,6 +9,8 @@ import { RegisterComponent } from './Components/register/register.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { NoteDataComponent } from './Components/note-data/note-data.component';
 import { NotfpundComponent } from './Components/notfpund/notfpund.component';
+import { AuthLayoutComponent } from './Layouts/auth-layout/auth-layout.component';
+import { BlankLayoutComponent } from './Layouts/blank-layout/blank-layout.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NotfpundComponent } from './Components/notfpund/notfpund.component';
     RegisterComponent,
     NavbarComponent,
     NoteDataComponent,
-    NotfpundComponent
+    NotfpundComponent,
+    AuthLayoutComponent,
+    BlankLayoutComponent
   ],
   imports: [
     BrowserModule,
