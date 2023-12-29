@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -11,7 +10,7 @@ import { NoteDataComponent } from './Components/note-data/note-data.component';
 import { NotfpundComponent } from './Components/notfpund/notfpund.component';
 import { AuthLayoutComponent } from './Layouts/auth-layout/auth-layout.component';
 import { BlankLayoutComponent } from './Layouts/blank-layout/blank-layout.component';
-import { FilterPipe } from './Core/filter.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,11 +23,12 @@ import { FilterPipe } from './Core/filter.pipe';
     NotfpundComponent,
     AuthLayoutComponent,
     BlankLayoutComponent,
-    FilterPipe
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
