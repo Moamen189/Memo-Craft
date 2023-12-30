@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
       this._Router.events.subscribe({
         next:(response) => {
-          if(response instanceof NavigationStart){
+          if(response instanceof NavigationEnd){
               this.menueName = response.url.replace('/' , '');
           }
         }
