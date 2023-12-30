@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  menueName:string = 'Login';
+
+
+  constructor(private _Router:Router) {
+
+      this._Router.events.subscribe({
+        next:(response) => {
+          if(response instanceof NavigationStart){
+              this.menueName = response.url.replace('/' , '');
+          }
+        }
+      })
+   }
 
   ngOnInit(): void {
   }
