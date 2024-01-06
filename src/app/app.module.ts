@@ -13,6 +13,7 @@ import { BlankLayoutComponent } from './Layouts/blank-layout/blank-layout.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './Core/shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
