@@ -3,3 +3,7 @@
  background-size: cover;
  height: 70vh;
 }
+
+section {
+  height:  calc(100vh - 70px);
+}
