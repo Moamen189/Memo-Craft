@@ -1,16 +1,32 @@
 <section class="d-flex justify-content-center align-items-center">
 <div class="row g-0 shadow rounded overflow-hidden  w-100 align-items-center">
-<div class="col-lg-8">
+<div class="col-md-8">
 
   <div class="image"></div>
 </div>
-<div class="col-lg-4">
+<div class="col-md-4">
   <form class="p-4" [formGroup]="RegisterForm" (ngSubmit)="register(RegisterForm)">
+    <h1 class="text-center display-1">Register</h1>
     <mat-form-field class="w-100" appearance="outline">
-      <mat-label>Email</mat-label>
-      <input formControlName = "first_name" type="email" matInput  placeholder="Ex. pat@example.com">
+      <mat-label>First Name</mat-label>
+      <input formControlName = "first_name" type="text" matInput  placeholder="Ex. Moamen ">
+        <mat-error *ngIf="RegisterForm.get('first_name')?.hasError('required')">first name is <strong>required</strong></mat-error>
 
-        <mat-error *ngIf="RegisterForm.get('first_name')?.hasError('required')">Email is <strong>required</strong></mat-error>
+        <mat-label>Last Name</mat-label>
+        <input formControlName = "last_name" type="text" matInput  placeholder="Ex. Ashraf">
+          <mat-error *ngIf="RegisterForm.get('last_name')?.hasError('required')">Last name is <strong>required</strong></mat-error>
+
+          <mat-label>Email</mat-label>
+          <input formControlName = "email" type="email" matInput  placeholder="Ex .Moamen @ gmail.com">
+            <mat-error *ngIf="RegisterForm.get('email')?.hasError('required')">Email is <strong>required</strong></mat-error>
+
+            <mat-label>First Name</mat-label>
+            <input formControlName = "first_name" type="text" matInput  placeholder="Ex .Moamen Ashraf">
+              <mat-error *ngIf="RegisterForm.get('first_name')?.hasError('required')">first name is <strong>required</strong></mat-error>
+
+              <mat-label>First Name</mat-label>
+              <input formControlName = "first_name" type="text" matInput  placeholder="Ex .Moamen Ashraf">
+                <mat-error *ngIf="RegisterForm.get('first_name')?.hasError('required')">first name is <strong>required</strong></mat-error>
 
     </mat-form-field>
   </form>
