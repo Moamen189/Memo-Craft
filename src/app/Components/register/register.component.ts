@@ -21,8 +21,14 @@ export class RegisterComponent implements OnInit {
           age:['', [Validators.required]],
       })
   }
+register(formData:FormGroup):void{
+  console.log(formData.value)
+}
+
+
 
   ngOnInit(): void {
+    this.CreateForm()
   }
 
 }

@@ -5,12 +5,12 @@
   <div class="image"></div>
 </div>
 <div class="col-lg-4">
-  <form class="p-4">
+  <form class="p-4" [formGroup]="RegisterForm" (ngSubmit)="register(RegisterForm)">
     <mat-form-field class="w-100" appearance="outline">
       <mat-label>Email</mat-label>
-      <input type="email" matInput  placeholder="Ex. pat@example.com">
+      <input formControlName = "first_name" type="email" matInput  placeholder="Ex. pat@example.com">
 
-        <mat-error>Email is <strong>required</strong></mat-error>
+        <mat-error *ngIf="RegisterForm.get('first_name')?.hasError('required')">Email is <strong>required</strong></mat-error>
 
     </mat-form-field>
   </form>
