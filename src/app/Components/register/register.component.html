@@ -26,15 +26,15 @@
     </mat-form-field>
 
             <mat-form-field class="w-100" appearance="outline">
-            <mat-label>First Name</mat-label>
-            <input formControlName = "first_name" type="text" matInput  placeholder="Ex .Moamen Ashraf">
-              <mat-error *ngIf="RegisterForm.get('first_name')?.hasError('required')">first name is <strong>required</strong></mat-error>
+            <mat-label>Password</mat-label>
+            <input formControlName = "password" type="password" matInput >
+              <mat-error *ngIf="RegisterForm.get('password')?.hasError('required')">Password is <strong>required</strong></mat-error>
     </mat-form-field>
 
               <mat-form-field class="w-100" appearance="outline">
-              <mat-label>First Name</mat-label>
-              <input formControlName = "first_name" type="text" matInput  placeholder="Ex .Moamen Ashraf">
-                <mat-error *ngIf="RegisterForm.get('first_name')?.hasError('required')">first name is <strong>required</strong></mat-error>
+              <mat-label>Age</mat-label>
+              <input formControlName = "age" type="number" matInput  placeholder="25">
+                <mat-error *ngIf="RegisterForm.get('age')?.hasError('required')">Age<strong>required</strong></mat-error>
 
     </mat-form-field>
   </form>
