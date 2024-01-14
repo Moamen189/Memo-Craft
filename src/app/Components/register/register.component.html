@@ -11,19 +11,27 @@
       <mat-label>First Name</mat-label>
       <input formControlName = "first_name" type="text" matInput  placeholder="Ex. Moamen ">
         <mat-error *ngIf="RegisterForm.get('first_name')?.hasError('required')">first name is <strong>required</strong></mat-error>
+    </mat-form-field>
 
+        <mat-form-field class="w-100" appearance="outline">
         <mat-label>Last Name</mat-label>
         <input formControlName = "last_name" type="text" matInput  placeholder="Ex. Ashraf">
           <mat-error *ngIf="RegisterForm.get('last_name')?.hasError('required')">Last name is <strong>required</strong></mat-error>
+    </mat-form-field>
 
+          <mat-form-field class="w-100" appearance="outline">
           <mat-label>Email</mat-label>
           <input formControlName = "email" type="email" matInput  placeholder="Ex .Moamen @ gmail.com">
             <mat-error *ngIf="RegisterForm.get('email')?.hasError('required')">Email is <strong>required</strong></mat-error>
+    </mat-form-field>
 
+            <mat-form-field class="w-100" appearance="outline">
             <mat-label>First Name</mat-label>
             <input formControlName = "first_name" type="text" matInput  placeholder="Ex .Moamen Ashraf">
               <mat-error *ngIf="RegisterForm.get('first_name')?.hasError('required')">first name is <strong>required</strong></mat-error>
+    </mat-form-field>
 
+              <mat-form-field class="w-100" appearance="outline">
               <mat-label>First Name</mat-label>
               <input formControlName = "first_name" type="text" matInput  placeholder="Ex .Moamen Ashraf">
                 <mat-error *ngIf="RegisterForm.get('first_name')?.hasError('required')">first name is <strong>required</strong></mat-error>
