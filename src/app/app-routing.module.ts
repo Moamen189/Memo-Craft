@@ -6,10 +6,11 @@ import { AuthLayoutComponent } from './Layouts/auth-layout/auth-layout.component
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { NotfpundComponent } from './Components/notfpund/notfpund.component';
+import { auth } from './Core/Guards/auth.guard';
 
 const routes: Routes = [
 
-{path:'' , component:BlankLayoutComponent , children:[
+{path:'' ,canActivate: [auth] ,component:BlankLayoutComponent , children:[
   {path:'' , redirectTo:'home', pathMatch:'full'},
 
   {path:'home', component:HomeComponent , title:'Home'}

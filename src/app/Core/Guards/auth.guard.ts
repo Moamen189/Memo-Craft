@@ -11,6 +11,7 @@ export const auth:CanActivateFn = ( route: ActivatedRouteSnapshot,
 
       return true;
     }else {
-      return  _route.navigate(['/login'])
+       _route.navigate(['/login']);
+       return  false
     }
 }
