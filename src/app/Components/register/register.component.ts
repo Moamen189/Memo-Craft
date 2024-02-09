@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
+
 export class RegisterComponent implements OnInit {
 
   constructor(private _Form:FormBuilder) { }
@@ -24,6 +25,7 @@ export class RegisterComponent implements OnInit {
 register(formData:FormGroup):void{
   console.log(formData.value)
 }
+hide = true;
 
 
 
