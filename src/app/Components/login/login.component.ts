@@ -28,6 +28,8 @@ login(formData:FormGroup):void{
         next:response =>{
           if(response.message === "success"){
               this._Route.navigate(['/home'])
+              localStorage.setItem("_noteToken" , response.token)
+              this._auth.userData()
           }else {
               this._toastr.error(response.message)
           }
