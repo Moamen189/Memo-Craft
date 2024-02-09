@@ -32,7 +32,7 @@ register(formData:FormGroup):void{
           if(response.message === "success"){
               this._Route.navigate(['/login'])
           }else {
-              this._toastr.error("Registraion Failed")
+              this._toastr.error(response.message)
           }
         }
       })
