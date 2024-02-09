@@ -41,6 +41,8 @@
                 <mat-error *ngIf="RegisterForm.get('age')?.hasError('required')">Age<strong>required</strong></mat-error>
 
     </mat-form-field>
+
+    <button class="w-100" [disabled]="RegisterForm.invalid" mat-raised-button color="primary">Register</button>
   </form>
 
 

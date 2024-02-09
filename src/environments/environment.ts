@@ -1,3 +1,4 @@
 export const environment = {
-  production: false
+  production: false,
+  baseUrl:'https://sticky-note-fe.vercel.app/'
 };

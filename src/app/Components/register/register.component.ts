@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/Core/Services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class RegisterComponent implements OnInit {
 
-  constructor(private _Form:FormBuilder) { }
+  constructor(private _Form:FormBuilder , private _auth:AuthService) { }
 
   RegisterForm!:FormGroup
 
@@ -23,7 +24,12 @@ export class RegisterComponent implements OnInit {
       })
   }
 register(formData:FormGroup):void{
-  console.log(formData.value)
+  if(formData.valid){
+      this._auth.register(formData).subscribe({
+        next:response => console.log(response)
+      })
+  }
+
 }
 hide = true;
 
