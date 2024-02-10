@@ -1,15 +1,20 @@
 <Section class="p-4 bg-white rounded shadow">
-  <form >
+  <form [formGroup]="dataForm" (ngSubmit)="dataForm">
     <form class="example-form">
+      <h2 class="text-center display-4">Note Data</h2>
       <mat-form-field class="w-100" appearance="outline">
-        <mat-label>Favorite food</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="Sushi">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Ex. Note1" formControlName="title">
+        <mat-error *ngIf="dataForm.get('title')?.hasError('required')">title is <strong>required</strong></mat-error>
       </mat-form-field>
 
       <mat-form-field class="w-100" appearance="outline">
         <mat-label>Leave a comment</mat-label>
-        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+        <textarea matInput placeholder="Ex. It makes me feel..."  formControlName="desc"></textarea>
+        <mat-error *ngIf="dataForm.get('desc')?.hasError('required')">description is <strong>required</strong></mat-error>
+
       </mat-form-field>
+      <button mat-raised-button color="primary">Add Note</button>
     </form>
 
   </form>

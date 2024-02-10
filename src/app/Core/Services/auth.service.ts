@@ -21,7 +21,7 @@ export class AuthService {
 }
 
 userData():void{
-  const token = localStorage.getItem("_noteToken");
+  const token = localStorage.getItem("_noteotken");
   if(token !== null){
 
     const userData = jwtDecode(token);
