@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { jwtDecode } from 'jwt-decode';
 import { NoteService } from 'src/app/Core/Services/note.service';
 
@@ -10,7 +11,7 @@ import { NoteService } from 'src/app/Core/Services/note.service';
 })
 export class NoteDataComponent implements OnInit {
 
-  constructor(private _fb:FormBuilder , private _note:NoteService) { }
+  constructor(private _fb:FormBuilder , private _note:NoteService , private matDeialogRef:MatDialogRef<NoteDataComponent>) { }
   dataForm!:FormGroup
   userData:any
 
@@ -41,7 +42,14 @@ export class NoteDataComponent implements OnInit {
         ...this.dataForm.value,
         citizenID:this.userData._id
     }
-     // this._note.addNote(this.dataForm.value)
+     this._note.addNote(data).subscribe({
+      next:(response:any)=>{
+        if(response.message === "success"){
+            this.matDeialogRef.close()
+        }
+        console.log(response)
+      }
+     })
   }
 
 }
