@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { jwtDecode } from 'jwt-decode';
 import { NoteService } from 'src/app/Core/Services/note.service';
 
 @Component({
@@ -11,8 +12,11 @@ export class NoteDataComponent implements OnInit {
 
   constructor(private _fb:FormBuilder , private _note:NoteService) { }
   dataForm!:FormGroup
+  userData:any
+
   ngOnInit(): void {
     this.createForm()
+    this.userData = jwtDecode(localStorage.getItem("_noteotken")!)
   }
 
   createForm():void{
@@ -23,11 +27,21 @@ export class NoteDataComponent implements OnInit {
     })
   }
 
-  sendData(formData:FormGroup):void{
-    if(formData.valid){
+  sendData():void{
+    if(this.dataForm.valid){
 
-      console.log(formData)
+      console.log(this.dataForm.value)
+      this.addNote()
     }
+  }
+
+
+  addNote():void{
+    const data = {
+        ...this.dataForm.value,
+        citizenID:this.userData._id
+    }
+     // this._note.addNote(this.dataForm.value)
   }
 
 }
