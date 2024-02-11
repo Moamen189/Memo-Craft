@@ -57,6 +57,7 @@ export class HomeComponent implements OnInit {
       next: (res) => {
         if(res.message === "deleted"){
           this.nots.splice(index, 1);
+          this.nots = [...this.nots];
         }
       },
       error: (err) => {
