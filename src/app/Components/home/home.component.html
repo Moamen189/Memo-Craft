@@ -23,22 +23,27 @@
 <section class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
   <div class="col" *ngFor="let note of nots">
     <div class="card h-100 shadow">
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="position absolute end-0 ">
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>
-          <mat-icon>dialpad</mat-icon>
-          <span>Redial</span>
+          <mat-icon>edit</mat-icon>
+          <span>Update</span>
         </button>
-        <button mat-menu-item disabled>
-          <mat-icon>voicemail</mat-icon>
-          <span>Check voice mail</span>
+        <button mat-menu-item [swal]="deleteSwal">
+          <mat-icon>delete_outline</mat-icon>
+          <span>Delete</span>
         </button>
-        <button mat-menu-item>
-          <mat-icon>notifications_off</mat-icon>
-          <span>Disable alerts</span>
-        </button>
+                <swal
+          #deleteSwal
+          title="Delete {{ note.title }}?"
+          text="This cannot be undone"
+          icon="question"
+          [showCancelButton]="true"
+          [focusCancel]="true"
+          (confirm)="deleteNote()">
+        </swal>
       </mat-menu>
       
       <div class="card-body text-center">

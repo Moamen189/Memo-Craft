@@ -46,4 +46,8 @@ export class HomeComponent implements OnInit {
       }
     })
   }
+
+  deleteNote():void{
+    console.log("delete")
+  }
 }

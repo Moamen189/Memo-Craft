@@ -15,7 +15,7 @@ import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './Core/shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,8 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     HttpClientModule,
     SharedModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
