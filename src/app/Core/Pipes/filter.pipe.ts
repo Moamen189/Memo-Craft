@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(term: string, nots: any[]): any {
-    return nots.filter((note) => {note.title.toLowerCase().includes(term.toLowerCase())});
+  transform( nots: any[],term: string): any[] {
+    return nots.filter(note => note.title.toLowerCase().includes(term.toLowerCase()));
   }
 
 }
