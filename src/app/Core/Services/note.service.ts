@@ -20,4 +20,11 @@ export class NoteService {
   getNotes(formData:object):Observable<any>{
     return this._http.post(environment.baseUrl + 'getUserNotes',formData)
   }
+
+  deleteNotes(formData:object):Observable<any>{
+    const model = {
+      body:formData
+    }
+    return this._http.delete(environment.baseUrl + 'deleteNote',model)
+  }
 }

@@ -21,7 +21,7 @@
 
 
 <section class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-  <div class="col" *ngFor="let note of nots">
+  <div class="col" *ngFor="let note of nots index as index">
     <div class="card h-100 shadow">
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="position absolute end-0 ">
         <mat-icon>more_vert</mat-icon>
@@ -42,12 +42,12 @@
           icon="question"
           [showCancelButton]="true"
           [focusCancel]="true"
-          (confirm)="deleteNote()">
+          (confirm)="deleteNote(note._id , index)">
         </swal>
       </mat-menu>
       
       <div class="card-body text-center">
-        <h3 class="h5">{{note.title}}</h3>
+        <h3 class="h6">{{note.title}}</h3>
         <p class="small text-muted">{{note.desc}}</p>
       </div>
         </div>

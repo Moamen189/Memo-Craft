@@ -47,7 +47,21 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  deleteNote():void{
-    console.log("delete")
+  deleteNote(id:string , index:number):void{
+    const model = {
+      NoteId:id,
+      token:localStorage.getItem('_noteotken')
+    }
+
+    this._note.deleteNotes(model).subscribe({
+      next: (res) => {
+        if(res.message === "deleted"){
+          this.nots.splice(index, 1);
+        }
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
   }
 }
