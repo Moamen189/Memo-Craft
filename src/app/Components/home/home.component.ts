@@ -46,7 +46,11 @@ export class HomeComponent implements OnInit {
       }
     })
   }
-
+  setData(note:any):void{
+  this.dialog.open(NoteDataComponent , {
+    data:{note:note}
+  });
+}
   deleteNote(id:string , index:number):void{
     const model = {
       NoteId:id,

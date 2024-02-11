@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef , MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { jwtDecode } from 'jwt-decode';
 import { NoteService } from 'src/app/Core/Services/note.service';
 
@@ -11,7 +11,7 @@ import { NoteService } from 'src/app/Core/Services/note.service';
 })
 export class NoteDataComponent implements OnInit {
 
-  constructor(private _fb:FormBuilder , private _note:NoteService , private matDeialogRef:MatDialogRef<NoteDataComponent>) { }
+  constructor(private _fb:FormBuilder , private _note:NoteService , private matDeialogRef:MatDialogRef<NoteDataComponent> , @Inject(MAT_DIALOG_DATA) public data:any) { }
   dataForm!:FormGroup
   userData:any
 
