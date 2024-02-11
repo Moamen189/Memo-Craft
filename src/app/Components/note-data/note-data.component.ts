@@ -45,7 +45,7 @@ export class NoteDataComponent implements OnInit {
      this._note.addNote(data).subscribe({
       next:(response:any)=>{
         if(response.message === "success"){
-            this.matDeialogRef.close()
+            this.matDeialogRef.close("add")
         }
         console.log(response)
       }

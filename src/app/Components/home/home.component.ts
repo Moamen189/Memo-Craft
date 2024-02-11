@@ -17,10 +17,18 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getNotes();
   }
-  openDialog():void {
-  this.dialog.open(NoteDataComponent);
-  }
+  openDialog() {
+    const dialogRef = this.dialog.open(NoteDataComponent);
 
+    dialogRef.afterClosed().subscribe({
+      next: (result) => {
+        if(result === "add"){
+          this.getNotes();
+        }
+      }
+    
+    });
+  }
   getNotes():void{
     const model = {
       token: localStorage.getItem('_noteotken'),
