@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   constructor(public dialog: MatDialog , private _note : NoteService , private auth:AuthService ) { }
   nots:any[] = [];
+  value = '';
   ngOnInit(): void {
     this.getNotes();
   }

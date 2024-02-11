@@ -1,6 +1,20 @@
 <header class="py-4">
-  <div class="hstack justify-content-end">
+  <div class="col-md-10 mx-auto" *ngIf="nots.length !== 0">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput type="text" [(ngModel)]="value">
+  
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+  
+    </mat-form-field>
 
+  </div>
+
+
+  
+  <div class="hstack justify-content-end">
     <button (click)="openDialog()" mat-raised-button color="primary">Add Note</button>
   </div>
 </header>
