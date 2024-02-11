@@ -17,4 +17,7 @@ export class NoteService {
   UpdateNote(formData:object):Observable<any>{
     return this._http.put(environment.baseUrl + 'updateNote' , formData)
   }
+  getNotes(formData:object):Observable<any>{
+    return this._http.post(environment.baseUrl + 'getUserNotes',formData)
+  }
 }
