@@ -12,10 +12,12 @@ import { AuthLayoutComponent } from './Layouts/auth-layout/auth-layout.component
 import { BlankLayoutComponent } from './Layouts/blank-layout/blank-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './Core/shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { LoadingInterceptor } from './Core/loading.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +40,10 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     HttpClientModule,
     SharedModule,
     ToastrModule.forRoot(),
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    NgxSpinnerModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:LoadingInterceptor , multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
