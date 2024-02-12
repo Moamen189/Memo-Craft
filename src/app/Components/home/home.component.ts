@@ -47,9 +47,16 @@ export class HomeComponent implements OnInit {
     })
   }
   setData(note:any):void{
-  this.dialog.open(NoteDataComponent , {
+  const dialogRef=  this.dialog.open(NoteDataComponent , {
     data:{note:note}
   });
+  dialogRef.afterClosed().subscribe({
+    next:response => {
+        if(response === "updated"){
+          this.getNotes();
+        }
+    }
+  })
 }
   deleteNote(id:string , index:number):void{
     const model = {

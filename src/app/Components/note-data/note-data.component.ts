@@ -22,21 +22,39 @@ export class NoteDataComponent implements OnInit {
 
   createForm():void{
     this.dataForm = this._fb.group({
-    title:['' , [Validators.required]],
-    desc:['',[Validators.required]],
+    title:[this.data ? this.data.title :'' , [Validators.required]],
+    desc:[this.data ? this.data.desc :'',[Validators.required]],
     token:localStorage.getItem("_noteotken"),
     })
   }
 
   sendData():void{
     if(this.dataForm.valid){
+      if(this.data === null){
+        this.addNote()
 
-      console.log(this.dataForm.value)
-      this.addNote()
+      }else {
+          this.updateNote()
+      }
     }
   }
 
+  updateNote():void {
+    const model = {
+        token:localStorage.getItem("_noteotken"),
+        title:this.data.note.title,
+        desc:this.data.note.desc,
+        NoteID:this.data.note._id,
+    }
+    this._note.UpdateNote(model).subscribe({
+      next:response => {
+        if(response.message === "updated"){
 
+          this.matDeialogRef.close("updated")
+        }
+      }
+    })
+  }
   addNote():void{
     const data = {
         ...this.dataForm.value,

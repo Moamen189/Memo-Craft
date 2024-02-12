@@ -14,7 +14,8 @@
         <mat-error *ngIf="dataForm.get('desc')?.hasError('required')">description is <strong>required</strong></mat-error>
 
       </mat-form-field>
-      <button [disabled]="dataForm.invalid" mat-raised-button color="primary">Add Note</button>
+      <button [disabled]="dataForm.invalid" mat-raised-button color="primary" *ngIf="!data">Add Note</button>
+      <button [disabled]="dataForm.invalid" mat-raised-button color="warn" *ngIf="data">Add Note</button>
     </form>
 
   </form>
