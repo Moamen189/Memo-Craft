@@ -42,8 +42,7 @@ export class NoteDataComponent implements OnInit {
   updateNote():void {
     const model = {
         token:localStorage.getItem("_noteotken"),
-        title:this.data.note.title,
-        desc:this.data.note.desc,
+        ...this.dataForm.value,
         NoteID:this.data.note._id,
     }
     this._note.UpdateNote(model).subscribe({
