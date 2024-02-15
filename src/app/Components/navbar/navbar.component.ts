@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit {
 
   logOut():void{
     this._Router.navigate(['/login'])
+    localStorage.removeItem('_noteotken')
   }
 
 }
