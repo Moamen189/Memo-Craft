@@ -15,7 +15,6 @@ import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './Core/shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
-import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LoadingInterceptor } from './Core/loading.interceptor';
 @NgModule({
@@ -40,7 +39,6 @@ import { LoadingInterceptor } from './Core/loading.interceptor';
     HttpClientModule,
     SharedModule,
     ToastrModule.forRoot(),
-    SweetAlert2Module.forRoot(),
     NgxSpinnerModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:LoadingInterceptor , multi:true}],
